@@ -28,6 +28,11 @@ public class FeedbackController {
 
     private final FeedbackService feedbackService;
 
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("Service is running!");
+    }
+
     @PostMapping
     public ResponseEntity<FeedbackResponse> submitFeedback(
             @Valid @RequestBody FeedbackRequest request,
